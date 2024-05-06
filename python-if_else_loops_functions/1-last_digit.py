@@ -12,4 +12,3 @@ elif (last < 6) and (last != 0):
           format(number, last))
 else:
     print("Last digit of {:d} is {:d} and is 0".format(number, last))
-    
