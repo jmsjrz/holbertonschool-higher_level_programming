@@ -12,5 +12,5 @@ def load_from_json_file(filename):
     :param filename: The name of the JSON file to read from.
     :return: The corresponding Python object.
     """
-    with open(filename, 'r', encoding='utf-8') as file:
+    with open(filename, 'r') as file:
         return json.load(file)
