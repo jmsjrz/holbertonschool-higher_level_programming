@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_PASSWORD: HolbertonSchoolRoubaix  # Replace with your desired password
+      POSTGRES_USER: postgres
+    networks:
+      - my-network
+
+  admin:
+    image: dpage/pgadmin4:latest
+    environment:
+      PGADMIN_DEFAULT_EMAIL: 8708@holbertonstudents.com  # Replace with your email
+      PGADMIN_DEFAULT_PASSWORD: HolbertonSchoolRoubaix  # Replace with your desired password
+    ports:
+      - 5050:5050  # Exposes port 5050 of the container to port 5050 on the host
+    depends_on:
+      - db
+    networks:
+      - my-network
+
+networks:
+  my-network:
+    external: false  # This creates a private network
